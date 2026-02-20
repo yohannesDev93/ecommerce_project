@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.CustomerStoreController"
+            style="-fx-background-color: #f5f5f5;">
+    
+    <top>
+        <VBox spacing="5">
+            <!-- Top Bar -->
+            <HBox spacing="20" alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-padding: 15;">
+                <Label text="🛒 E-Store" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                
+                <HBox spacing="10" HBox.hgrow="ALWAYS">
+                    <TextField fx:id="searchField" promptText="Search products..." prefWidth="250"/>
+                    <Button text="Search" onAction="#handleSearch" 
+                            style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                    
+                    <ComboBox fx:id="categoryFilter" promptText="All Categories" prefWidth="150"/>
+                    <ComboBox fx:id="sortComboBox" promptText="Sort by" prefWidth="140"/>
+                    <ComboBox fx:id="currencyComboBox" prefWidth="80"/>
+                </HBox>
+                
+                <HBox spacing="10">
+                    <Button text="🛒 Cart" fx:id="cartButton" onAction="#viewCart"/>
+                    <Button text="📦 Orders" fx:id="ordersButton" onAction="#viewOrders"/>
+                    <Button text="💬 Help" fx:id="helpButton" onAction="#openHelp"/>
+                    <Button text="👤 Logout" fx:id="logoutButton" onAction="#handleLogout"/>
+                </HBox>
+            </HBox>
+            
+            <!-- Info Bar -->
+            <HBox style="-fx-background-color: #3498db; -fx-padding: 10;" spacing="20">
+                <Label fx:id="welcomeLabel" text="Welcome!" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Label fx:id="currencyInfoLabel" text="Currency: USD" style="-fx-text-fill: #ecf0f1;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Free shipping available!" style="-fx-text-fill: #f1c40f;"/>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <StackPane>
+            <!-- Main content area -->
+            <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                <FlowPane fx:id="productGrid" hgap="20" vgap="20" style="-fx-padding: 20;"/>
+            </ScrollPane>
+            
+            <!-- Loading Overlay - Centered with beautiful animation -->
+            <VBox fx:id="loadingOverlay" alignment="CENTER" spacing="15" 
+                  style="-fx-background-color: rgba(255, 255, 255, 0.95); -fx-padding: 40;">
+                <!-- Animated Spinner -->
+                <StackPane>
+                    <ProgressIndicator fx:id="loadingSpinner" 
+                                      progress="-1" 
+                                      style="-fx-progress-color: linear-gradient(to right, #3498db, #2ecc71); 
+                                             -fx-scale-x: 1.5; 
+                                             -fx-scale-y: 1.5;">
+                        <VBox.margin>
+                            <Insets bottom="10"/>
+                        </VBox.margin>
+                    </ProgressIndicator>
+                    
+                    <!-- Optional: Add rotating icon inside spinner -->
+                    <Label text="🛍️" 
+                           style="-fx-font-size: 24px; -fx-text-fill: #3498db;"
+                           visible="false"/>
+                </StackPane>
+                
+                <!-- Loading Text with Animation -->
+                <VBox alignment="CENTER" spacing="8">
+                    <Label fx:id="loadingLabel" text="Loading Products" 
+                           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; 
+                                  -fx-font-family: 'Segoe UI', Arial, sans-serif;"/>
+                    
+                    <!-- Animated dots -->
+                    <HBox alignment="CENTER" spacing="2">
+                        <Label text="." 
+                               style="-fx-font-size: 24px; -fx-text-fill: #3498db; -fx-font-weight: bold;"
+                               fx:id="dot1"/>
+                        <Label text="." 
+                               style="-fx-font-size: 24px; -fx-text-fill: #2ecc71; -fx-font-weight: bold;"
+                               fx:id="dot2"/>
+                        <Label text="." 
+                               style="-fx-font-size: 24px; -fx-text-fill: #9b59b6; -fx-font-weight: bold;"
+                               fx:id="dot3"/>
+                    </HBox>
+                    
+                    <!-- Subtitle -->
+                    <Label text="Please wait while we fetch the latest products" 
+                           style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-font-style: italic;"/>
+                </VBox>
+                
+                <!-- Optional: Loading progress bar -->
+                <ProgressBar fx:id="loadingProgress" 
+                            prefWidth="300" 
+                            style="-fx-accent: linear-gradient(to right, #3498db, #2ecc71); 
+                                   -fx-background-radius: 5; -fx-border-radius: 5;"
+                            visible="false">
+                    <VBox.margin>
+                        <Insets top="20"/>
+                    </VBox.margin>
+                </ProgressBar>
+                
+                <!-- Optional: Cancel button -->
+                <Button text="Cancel Loading" 
+                        style="-fx-background-color: transparent; -fx-text-fill: #e74c3c; -fx-border-color: transparent; 
+                               -fx-font-size: 12px; -fx-padding: 5 15; -fx-cursor: hand;"
+                        visible="false"
+                       >
+                    <VBox.margin>
+                        <Insets top="15"/>
+                    </VBox.margin>
+                </Button>
+            </VBox>
+            
+            <!-- Error message overlay -->
+            <VBox fx:id="errorOverlay" alignment="CENTER" spacing="15" visible="false"
+                  style="-fx-background-color: rgba(255, 255, 255, 0.95); -fx-padding: 40;">
+                <Label text="❌" style="-fx-font-size: 48px; -fx-text-fill: #e74c3c;"/>
+                <Label fx:id="errorLabel" text="Failed to load products" 
+                       style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Button text="Retry" 
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;
+                               -fx-padding: 10 20; -fx-background-radius: 5; -fx-cursor: hand;"
+                        onAction="#retryLoading"/>
+            </VBox>
+        </StackPane>
+    </center>
+    
+    <bottom>
+        <VBox style="-fx-background-color: #2c3e50; -fx-padding: 15;" alignment="CENTER" spacing="10">
+            <Label text="© 2024 E-Store" style="-fx-text-fill: white;"/>
+            <HBox spacing="20">
+                <Hyperlink text="Privacy" style="-fx-text-fill: #ecf0f1;"/>
+                <Hyperlink text="Terms" style="-fx-text-fill: #ecf0f1;"/>
+                <Hyperlink text="Contact" style="-fx-text-fill: #ecf0f1;"/>
+                <Hyperlink text="About" style="-fx-text-fill: #ecf0f1;"/>
+            </HBox>
+        </VBox>
+    </bottom>
+    
+</BorderPane>

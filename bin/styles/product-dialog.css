@@ -1,0 +1,28 @@
+.dialog-pane {
+    -fx-background-color: #f8f9fa;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: linear-gradient(to right, #3498db, #2ecc71);
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.separator {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 5 0;
+}
+
+/* Scroll bar styling */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #bdc3c7;
+    -fx-background-radius: 5;
+}

@@ -1,0 +1,216 @@
+/* Main background styling - This will add background image */
+.root {
+    -fx-background-image: url("file:///C:/Full%20Jave%20Projects/ecommerce_project/images/bg/customer-log.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+/* Make ScrollPane transparent to show background */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .content {
+    -fx-background-color: transparent;
+}
+
+/* Style for the overlay rectangle */
+.rectangle-overlay {
+    -fx-fill: linear-gradient(to bottom, rgba(240, 249, 255, 0.85), rgba(240, 249, 255, 0.92));
+}
+
+/* Header styles */
+.welcome-label {
+    -fx-font-size: 46px;
+    -fx-font-weight: 900;
+    -fx-text-fill: linear-gradient(to right, #059669, #10b981);
+    -fx-effect: dropshadow(three-pass-box, rgba(16, 185, 129, 0.2), 10, 0, 0, 2);
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+    -fx-letter-spacing: 1.5px;
+}
+
+.subtitle-label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #475569;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+    -fx-font-weight: 300;
+}
+
+/* Form card styling */
+.form-card {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.5);
+    -fx-border-width: 1;
+    -fx-padding: 45 50;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 30, 0, 0, 10);
+    -fx-min-width: 460;
+    -fx-max-width: 520;
+}
+
+/* Input field styling */
+.text-field, .password-field {
+    -fx-pref-width: 360px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 15px;
+    -fx-background-color: rgba(248, 250, 252, 0.9);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #cbd5e1;
+    -fx-border-width: 1.5;
+    -fx-text-fill: #1e293b;
+    -fx-padding: 0 18;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+    -fx-prompt-text-fill: #94a3b8;
+}
+
+.text-field .text, .password-field .text {
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+/* Button styles */
+.login-button {
+    -fx-pref-width: 360px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+    -fx-text-fill: white;
+    -fx-background-color: linear-gradient(to right, #10b981, #059669);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-cursor: hand;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+    -fx-letter-spacing: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(16, 185, 129, 0.3), 10, 0, 0, 3);
+}
+
+.login-button:hover {
+    -fx-background-color: linear-gradient(to right, #0da271, #047857);
+    -fx-effect: dropshadow(three-pass-box, rgba(16, 185, 129, 0.4), 12, 0, 0, 4);
+}
+
+.register-button {
+    -fx-pref-width: 360px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #3b82f6;
+    -fx-background-color: rgba(239, 246, 255, 0.9);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #3b82f6;
+    -fx-border-width: 2;
+    -fx-cursor: hand;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+    -fx-letter-spacing: 0.5px;
+}
+
+.register-button:hover {
+    -fx-background-color: rgba(219, 234, 254, 0.9);
+    -fx-border-color: #2563eb;
+}
+
+.back-button {
+    -fx-pref-width: 360px;
+    -fx-pref-height: 48px;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #64748b;
+    -fx-background-color: transparent;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #cbd5e1;
+    -fx-border-width: 1.5;
+    -fx-cursor: hand;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.back-button:hover {
+    -fx-background-color: rgba(241, 245, 249, 0.5);
+    -fx-border-color: #94a3b8;
+}
+
+/* Hyperlink styling */
+.hyperlink {
+    -fx-text-fill: #3b82f6;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+    -fx-border-color: transparent;
+    -fx-underline: false;
+    -fx-padding: 5 0;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #2563eb;
+    -fx-underline: true;
+}
+
+/* Error label */
+.error-label {
+    -fx-text-fill: #ef4444;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+    -fx-alignment: center;
+    -fx-wrap-text: true;
+    -fx-max-width: 360px;
+    -fx-background-color: #fef2f2;
+    -fx-background-radius: 8;
+    -fx-padding: 10 15;
+}
+
+/* Field label styling */
+.field-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #475569;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+    -fx-letter-spacing: 1px;
+}
+
+/* Footer text */
+.footer-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+    -fx-font-weight: 400;
+}
+
+.copyright-text {
+    -fx-font-size: 11px;
+    -fx-text-fill: #94a3b8;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+    -fx-font-weight: 300;
+}
+
+/* Decorative line */
+.decorative-line {
+    -fx-pref-width: 80px;
+    -fx-pref-height: 3px;
+    -fx-background-color: linear-gradient(to right, transparent, #10b981, transparent);
+    -fx-effect: dropshadow(three-pass-box, #10b981, 8, 0, 0, 0);
+}
+
+/* Profile circle */
+.profile-circle {
+    -fx-fill: radial-gradient(center 50% 50%, radius 50%, #10b981, #059669);
+}
+
+/* Remove focus border */
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #10b981;
+    -fx-border-width: 2;
+}
+
+/* Remove the blue focus ring */
+.text-field:focused, .password-field:focused, .button:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}

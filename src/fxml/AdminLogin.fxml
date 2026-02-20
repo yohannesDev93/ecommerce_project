@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.Circle?>
+
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="controllers.AdminLoginController"
+           style="-fx-background-color: #0f172a;">
+    
+    <!-- Background Image with Overlay -->
+    <ImageView fitWidth="${scene.width}" fitHeight="${scene.height}" preserveRatio="false">
+        <Image url="file:///C:/Full%20Jave%20Projects/ecommerce_project/images/bg/admin-login.jpg" />
+        <effect>
+            <InnerShadow radius="5" color="#00000060"/>
+        </effect>
+    </ImageView>
+    
+    <!-- Dark Overlay for Readability -->
+    <Rectangle fill="rgba(15, 23, 42, 0.85)" width="${scene.width}" height="${scene.height}"/>
+    
+    <!-- Main Content Container -->
+    <VBox alignment="CENTER" spacing="30" style="-fx-padding: 50;">
+        
+        <!-- Header Section with Icon -->
+        <VBox alignment="CENTER" spacing="15">
+            <StackPane>
+                <Circle radius="45" fill="linear-gradient(to right, #3b82f6, #8b5cf6)"/>
+                <Label text="⚙️" style="-fx-font-size: 36px;"/>
+            </StackPane>
+            
+            <Label text="ADMIN PORTAL" style="
+                -fx-font-size: 42px;
+                -fx-font-weight: 900;
+                -fx-text-fill: linear-gradient(to right, #ffffff, #dbeafe);
+                -fx-effect: dropshadow(three-pass-box, rgba(59, 130, 246, 0.5), 15, 0, 0, 2);
+                -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+                -fx-letter-spacing: 2px;
+            "/>
+            
+            <Label text="Secure System Access" style="
+                -fx-font-size: 16px;
+                -fx-text-fill: #94a3b8;
+                -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+                -fx-font-weight: 300;
+            "/>
+            
+            <!-- Decorative Line -->
+            <StackPane style="
+                -fx-pref-width: 100px;
+                -fx-pref-height: 3px;
+                -fx-background-color: linear-gradient(to right, transparent, #3b82f6, transparent);
+                -fx-effect: dropshadow(three-pass-box, #3b82f6, 10, 0, 0, 0);
+            "/>
+        </VBox>
+        
+        <!-- Login Form Card -->
+        <VBox spacing="25" alignment="CENTER" style="
+            -fx-background-color: rgba(30, 41, 59, 0.95);
+            -fx-background-radius: 20;
+            -fx-border-radius: 20;
+            -fx-border-color: rgba(59, 130, 246, 0.2);
+            -fx-border-width: 1;
+            -fx-padding: 50 60;
+            -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 25, 0, 0, 8);
+            -fx-min-width: 450;
+            -fx-max-width: 500;
+        ">
+            
+            <!-- Username Field -->
+            <VBox spacing="8" alignment="CENTER_LEFT">
+                <Label text="USERNAME" style="
+                    -fx-font-size: 13px;
+                    -fx-font-weight: 700;
+                    -fx-text-fill: #cbd5e1;
+                    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+                    -fx-letter-spacing: 1px;
+                "/>
+                <TextField fx:id="usernameField" promptText="Enter admin username" style="
+                    -fx-pref-width: 340px;
+                    -fx-pref-height: 52px;
+                    -fx-font-size: 16px;
+                    -fx-background-color: rgba(15, 23, 42, 0.8);
+                    -fx-background-radius: 12;
+                    -fx-border-radius: 12;
+                    -fx-border-color: #475569;
+                    -fx-border-width: 1.5;
+                    -fx-text-fill: #f1f5f9;
+                    -fx-padding: 0 20;
+                    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+                    -fx-prompt-text-fill: #64748b;
+                ">
+                    <effect>
+                        <DropShadow radius="5" color="#00000030"/>
+                    </effect>
+                </TextField>
+            </VBox>
+            
+            <!-- Password Field -->
+            <VBox spacing="8" alignment="CENTER_LEFT">
+                <Label text="PASSWORD" style="
+                    -fx-font-size: 13px;
+                    -fx-font-weight: 700;
+                    -fx-text-fill: #cbd5e1;
+                    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+                    -fx-letter-spacing: 1px;
+                "/>
+                <PasswordField fx:id="passwordField" promptText="Enter your password" style="
+                    -fx-pref-width: 340px;
+                    -fx-pref-height: 52px;
+                    -fx-font-size: 16px;
+                    -fx-background-color: rgba(15, 23, 42, 0.8);
+                    -fx-background-radius: 12;
+                    -fx-border-radius: 12;
+                    -fx-border-color: #475569;
+                    -fx-border-width: 1.5;
+                    -fx-text-fill: #f1f5f9;
+                    -fx-padding: 0 20;
+                    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+                    -fx-prompt-text-fill: #64748b;
+                ">
+                    <effect>
+                        <DropShadow radius="5" color="#00000030"/>
+                    </effect>
+                </PasswordField>
+            </VBox>
+            
+            <!-- Buttons Container -->
+            <HBox spacing="20" alignment="CENTER" style="-fx-padding: 15 0 0 0;">
+                <!-- Login Button -->
+                <Button text="LOGIN" fx:id="loginBtn" style="
+                    -fx-pref-width: 160px;
+                    -fx-pref-height: 52px;
+                    -fx-font-size: 16px;
+                    -fx-font-weight: 800;
+                    -fx-text-fill: white;
+                    -fx-background-color: linear-gradient(to right, #3b82f6, #6366f1);
+                    -fx-background-radius: 12;
+                    -fx-border-radius: 12;
+                    -fx-cursor: hand;
+                    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+                    -fx-letter-spacing: 1px;
+                    -fx-effect: dropshadow(three-pass-box, rgba(59, 130, 246, 0.4), 10, 0, 0, 3);
+                " onAction="#handleLogin">
+                    <effect>
+                        <InnerShadow radius="3" color="#00000040"/>
+                    </effect>
+                </Button>
+                
+                <!-- Back Button -->
+                <Button text="BACK" fx:id="backBtn" style="
+                    -fx-pref-width: 160px;
+                    -fx-pref-height: 52px;
+                    -fx-font-size: 16px;
+                    -fx-font-weight: 800;
+                    -fx-text-fill: #cbd5e1;
+                    -fx-background-color: rgba(30, 41, 59, 0.9);
+                    -fx-background-radius: 12;
+                    -fx-border-radius: 12;
+                    -fx-border-color: #475569;
+                    -fx-border-width: 1.5;
+                    -fx-cursor: hand;
+                    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+                    -fx-letter-spacing: 1px;
+                " onAction="#handleBack">
+                    <effect>
+                        <DropShadow radius="5" color="#00000030"/>
+                    </effect>
+                </Button>
+            </HBox>
+            
+            <!-- Error Message Label -->
+            <Label fx:id="errorLabel" style="
+                -fx-text-fill: #f87171;
+                -fx-font-size: 14px;
+                -fx-font-weight: 500;
+                -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+                -fx-padding: 10 0 0 0;
+                -fx-alignment: CENTER;
+                -fx-wrap-text: true;
+                -fx-max-width: 340px;
+            " visible="false"/>
+            
+            <!-- Security Note -->
+            <Label text="🔒 Secure connection • All activities are logged" style="
+                -fx-font-size: 12px;
+                -fx-text-fill: #64748b;
+                -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+                -fx-padding: 20 0 0 0;
+                -fx-font-weight: 300;
+            "/>
+            
+        </VBox>
+        
+        <!-- Footer -->
+        <VBox alignment="CENTER" spacing="5">
+            <Label text="⚠️ Authorized Personnel Only" style="
+                -fx-font-size: 13px;
+                -fx-text-fill: #94a3b8;
+                -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+                -fx-font-weight: 500;
+            "/>
+            <Label text="Version 2.1.4 • Last login: --/--/---- --:--" style="
+                -fx-font-size: 11px;
+                -fx-text-fill: #475569;
+                -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+                -fx-font-weight: 300;
+            "/>
+        </VBox>
+        
+    </VBox>
+    
+</StackPane>

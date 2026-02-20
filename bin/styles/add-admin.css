@@ -1,0 +1,236 @@
+/* add-admin.css */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* Card Shadow Effect */
+.card-shadow {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+}
+
+/* Button Hover Effect */
+.button-hover:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-cursor: hand;
+}
+
+.button-hover:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Delete Button Style */
+.delete-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+}
+
+.delete-button:hover {
+    -fx-background-color: #c0392b;
+    -fx-effect: dropshadow(gaussian, rgba(231, 76, 60, 0.3), 8, 0, 0, 2);
+}
+
+.delete-button:disabled {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* View Button */
+.view-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+}
+
+.view-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Edit Button */
+.edit-button {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+}
+
+.edit-button:hover {
+    -fx-background-color: #d35400;
+}
+
+/* Text Field Focus */
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+}
+
+/* Error Message */
+.error-message {
+    -fx-background-color: #ffeaea;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-border-color: #e74c3c;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+/* Success Message */
+.success-message {
+    -fx-background-color: #e8f6ef;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-border-color: #27ae60;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+/* Warning Message */
+.warning-message {
+    -fx-background-color: #fff3cd;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-border-color: #ffc107;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-text-fill: #856404;
+}
+
+/* Admin Card Styles */
+.admin-card {
+    -fx-background-color: linear-gradient(to right, #f8f9fa, #ffffff);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 5, 0, 0, 1);
+}
+
+.admin-card:hover {
+    -fx-background-color: linear-gradient(to right, #f0f8ff, #ffffff);
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.2), 8, 0, 0, 2);
+    -fx-cursor: hand;
+}
+
+/* Primary Admin Card */
+.primary-admin-card {
+    -fx-background-color: linear-gradient(to right, #fff3cd, #ffffff);
+    -fx-border-color: #ffc107;
+}
+
+.primary-admin-card:hover {
+    -fx-background-color: linear-gradient(to right, #ffeaa7, #ffffff);
+}
+
+/* Role Badges */
+.role-admin {
+    -fx-background-color: linear-gradient(to right, #3498db, #2980b9);
+    -fx-text-fill: white;
+    -fx-background-radius: 15;
+    -fx-padding: 3 10;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+}
+
+.role-super-admin {
+    -fx-background-color: linear-gradient(to right, #9b59b6, #8e44ad);
+    -fx-text-fill: white;
+    -fx-background-radius: 15;
+    -fx-padding: 3 10;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+}
+
+.role-primary-admin {
+    -fx-background-color: linear-gradient(to right, #e74c3c, #c0392b);
+    -fx-text-fill: white;
+    -fx-background-radius: 15;
+    -fx-padding: 3 10;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+}
+
+/* ScrollPane Customization */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: #f0f0f0;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #bdc3c7;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #95a5a6;
+}
+
+/* Status Indicators */
+.status-active {
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+}
+
+.status-inactive {
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 8;
+    -fx-font-size: 12;
+}
+
+/* Confirmation Dialog Styling */
+.dialog-pane {
+    -fx-background-color: white;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #3498db;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #2980b9;
+}

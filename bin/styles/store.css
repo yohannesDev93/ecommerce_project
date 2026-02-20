@@ -1,0 +1,185 @@
+/* store.css */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Button Styles */
+.button {
+    -fx-background-radius: 6;
+    -fx-padding: 8 16;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 2);
+}
+
+.button:hover {
+    -fx-translate-y: -1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 6, 0, 0, 3);
+}
+
+/* Specific button colors */
+#cartButton {
+    -fx-background-color: linear-gradient(to bottom, #fbbf24, #f59e0b);
+    -fx-text-fill: white;
+}
+
+#ordersButton {
+    -fx-background-color: linear-gradient(to bottom, #8b5cf6, #7c3aed);
+    -fx-text-fill: white;
+}
+
+#helpButton {
+    -fx-background-color: linear-gradient(to bottom, #10b981, #059669);
+    -fx-text-fill: white;
+}
+
+#logoutButton {
+    -fx-background-color: linear-gradient(to bottom, #ef4444, #dc2626);
+    -fx-text-fill: white;
+}
+
+/* ComboBox Styles */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.combo-box:focused {
+    -fx-border-color: #3498db;
+}
+
+/* TextField Styles */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 8;
+}
+
+.text-field:focused {
+    -fx-border-color: #3498db;
+}
+
+/* Currency ComboBox Special */
+#currencyComboBox {
+    -fx-background-color: linear-gradient(to bottom, #34d399, #10b981);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Product Card Styles */
+.product-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #e2e8f0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 5, 0, 0, 2);
+    -fx-padding: 15;
+    -fx-min-width: 250;
+    -fx-min-height: 350;
+}
+
+.product-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(52, 152, 219, 0.15), 8, 0, 0, 3);
+    -fx-border-color: #3498db;
+}
+/* Product Cards */
+.product-card {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 12px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 2);
+}
+
+.product-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 15, 0, 0, 3);
+    -fx-border-color: #3498db;
+    -fx-cursor: hand;
+}
+
+/* Price Styling */
+.original-price {
+    -fx-font-size: 13px;
+    -fx-text-fill: #95a5a6;
+    -fx-strikethrough: true;
+}
+
+.discounted-price {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27ae60;
+}
+
+.regular-price {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27ae60;
+}
+
+/* Buttons */
+.btn {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-pref-width: 95px;
+    -fx-pref-height: 32px;
+}
+
+.btn-view-details {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.btn-add-cart {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+}
+
+.btn-buy-now {
+    -fx-background-color: linear-gradient(to right, #f39c12, #e67e22);
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8px;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 38px;
+}
+
+.btn-disabled {
+    -fx-background-color: #95a5a6;
+    -fx-opacity: 0.7;
+    -fx-cursor: default;
+}
+
+/* Navigation */
+.nav-btn {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.cart-btn {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+}
+
+.orders-btn {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.help-btn {
+    -fx-background-color: #9b59b6;
+    -fx-text-fill: white;
+}
+
+.logout-btn {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}

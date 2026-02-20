@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.paint.LinearGradient?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="controllers.AddAdminController"
+            fitToWidth="true" fitToHeight="true"
+            hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+            style="-fx-background-color: transparent; -fx-border-color: transparent;">
+    
+    <VBox spacing="20" style="-fx-background-color: linear-gradient(to bottom, #f8f9fa, #e9ecef);">
+        <!-- Header Section -->
+        <HBox spacing="15" alignment="CENTER_LEFT" style="-fx-padding: 25 25 0 25;">
+            <HBox style="-fx-background-color: linear-gradient(to right, #3498db, #2980b9); -fx-background-radius: 15; -fx-padding: 10;">
+                <Circle radius="25" fill="white" 
+                        style="-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);" />
+            </HBox>
+            <VBox spacing="5">
+                <Label text="👑 Admin Management" style="-fx-text-fill: #2c3e50; -fx-font-size: 28; -fx-font-weight: bold;">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+                <Label text="Add, view, and manage system administrators" 
+                       style="-fx-text-fill: #7f8c8d; -fx-font-size: 14; -fx-font-style: italic;" />
+            </VBox>
+        </HBox>
+        
+        <!-- Main Content Area -->
+        <HBox spacing="20" style="-fx-padding: 20 25; -fx-wrap-text: true;">
+            
+            <!-- Left Panel: Add Admin Form -->
+            <VBox spacing="15" prefWidth="400" 
+                  style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; 
+                         -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.15), 15, 0, 0, 5);
+                         -fx-border-color: #3498db; -fx-border-width: 1; -fx-border-radius: 15;">
+                <Label text="➕ Add New Admin" 
+                       style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-font-size: 20; 
+                              -fx-padding: 0 0 10 0;" />
+                
+                <VBox spacing="15">
+                    <!-- Form Fields -->
+                    <VBox spacing="5">
+                        <Label text="Full Name" 
+                               style="-fx-text-fill: #34495e; -fx-font-weight: bold; -fx-font-size: 14;" />
+                        <TextField fx:id="fullNameField" promptText="Enter full name" 
+                                   style="-fx-background-radius: 10; -fx-border-radius: 10; 
+                                          -fx-padding: 12 15; -fx-font-size: 14;
+                                          -fx-border-color: #bdc3c7; -fx-border-width: 1;
+                                          -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0, 0, 1);" />
+                    </VBox>
+                    
+                    <VBox spacing="5">
+                        <Label text="Email Address" 
+                               style="-fx-text-fill: #34495e; -fx-font-weight: bold; -fx-font-size: 14;" />
+                        <TextField fx:id="emailField" promptText="Enter email address" 
+                                   style="-fx-background-radius: 10; -fx-border-radius: 10; 
+                                          -fx-padding: 12 15; -fx-font-size: 14;
+                                          -fx-border-color: #bdc3c7; -fx-border-width: 1;
+                                          -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0, 0, 1);" />
+                    </VBox>
+                    
+                    <VBox spacing="5">
+                        <Label text="Username" 
+                               style="-fx-text-fill: #34495e; -fx-font-weight: bold; -fx-font-size: 14;" />
+                        <TextField fx:id="usernameField" promptText="Enter username" 
+                                   style="-fx-background-radius: 10; -fx-border-radius: 10; 
+                                          -fx-padding: 12 15; -fx-font-size: 14;
+                                          -fx-border-color: #bdc3c7; -fx-border-width: 1;
+                                          -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0, 0, 1);" />
+                    </VBox>
+                    
+                    <VBox spacing="5">
+                        <Label text="Password" 
+                               style="-fx-text-fill: #34495e; -fx-font-weight: bold; -fx-font-size: 14;" />
+                        <PasswordField fx:id="passwordField" promptText="Enter password" 
+                                       style="-fx-background-radius: 10; -fx-border-radius: 10; 
+                                              -fx-padding: 12 15; -fx-font-size: 14;
+                                              -fx-border-color: #bdc3c7; -fx-border-width: 1;
+                                              -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0, 0, 1);" />
+                    </VBox>
+                    
+                    <VBox spacing="5">
+                        <Label text="Confirm Password" 
+                               style="-fx-text-fill: #34495e; -fx-font-weight: bold; -fx-font-size: 14;" />
+                        <PasswordField fx:id="confirmPasswordField" promptText="Confirm password" 
+                                       style="-fx-background-radius: 10; -fx-border-radius: 10; 
+                                              -fx-padding: 12 15; -fx-font-size: 14;
+                                              -fx-border-color: #bdc3c7; -fx-border-width: 1;
+                                              -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0, 0, 1);" />
+                    </VBox>
+                </VBox>
+                
+                <!-- Status Message -->
+                <Label fx:id="messageLabel" wrapText="true" 
+                       style="-fx-text-fill: #e74c3c; -fx-font-size: 14; 
+                              -fx-background-color: #ffeaea; -fx-background-radius: 10; 
+                              -fx-padding: 12; -fx-border-color: #e74c3c; 
+                              -fx-border-radius: 10; -fx-border-width: 1;
+                              -fx-alignment: center-left;" 
+                       visible="false" />
+                
+                <!-- Action Buttons -->
+                <HBox spacing="15" style="-fx-padding: 20 0 0 0; -fx-alignment: center;">
+                    <Button text="Add Admin" onAction="#handleAddAdmin" 
+                            style="-fx-background-color: linear-gradient(to right, #3498db, #2980b9); 
+                                   -fx-text-fill: white; -fx-font-weight: bold; 
+                                   -fx-background-radius: 10; -fx-padding: 15 40; -fx-font-size: 14;
+                                   -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.3), 5, 0, 0, 2);" />
+                    <Button text="Clear" onAction="#handleClear" 
+                            style="-fx-background-color: linear-gradient(to right, #95a5a6, #7f8c8d); 
+                                   -fx-text-fill: white; -fx-font-weight: bold; 
+                                   -fx-background-radius: 10; -fx-padding: 15 40; -fx-font-size: 14;
+                                   -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(149, 165, 166, 0.3), 5, 0, 0, 2);" />
+                </HBox>
+                
+                <!-- Warning Section -->
+                <VBox spacing="10" style="-fx-background-color: #fff3cd; -fx-background-radius: 10; 
+                                         -fx-padding: 20; -fx-margin: 25 0 0 0;
+                                         -fx-border-color: #ffeaa7; -fx-border-width: 1; -fx-border-radius: 10;">
+                    <Label text="⚠️ Important Notes" 
+                           style="-fx-text-fill: #856404; -fx-font-weight: bold; -fx-font-size: 14;" />
+                    <Label text="• Existing customers can be promoted to admin" 
+                           style="-fx-text-fill: #856404; -fx-font-size: 12;" wrapText="true" />
+                    <Label text="• Removing an admin will change their role to CUSTOMER" 
+                           style="-fx-text-fill: #856404; -fx-font-size: 12;" wrapText="true" />
+                    <Label text="• Primary admin account cannot be deleted" 
+                           style="-fx-text-fill: #856404; -fx-font-size: 12;" wrapText="true" />
+                </VBox>
+            </VBox>
+            
+            <!-- Right Panel: Admin List -->
+            <VBox spacing="15" HBox.hgrow="ALWAYS" 
+                  style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; 
+                         -fx-effect: dropshadow(gaussian, rgba(46, 204, 113, 0.15), 15, 0, 0, 5);
+                         -fx-border-color: #2ecc71; -fx-border-width: 1; -fx-border-radius: 15;">
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <Label text="📋 Existing Administrators" 
+                           style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-font-size: 20;" />
+                    <Button text="🔄 Refresh" onAction="#handleRefreshAdmins" 
+                            style="-fx-background-color: linear-gradient(to right, #2ecc71, #27ae60); 
+                                   -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; 
+                                   -fx-padding: 10 25; -fx-font-size: 14; -fx-cursor: hand;
+                                   -fx-effect: dropshadow(gaussian, rgba(46, 204, 113, 0.3), 5, 0, 0, 2);" />
+                </HBox>
+                
+                <HBox spacing="10">
+                    <TextField fx:id="searchField" promptText="Search admins by name, email or username..." 
+                               HBox.hgrow="ALWAYS" 
+                               style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 12 15;
+                                      -fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-font-size: 14;
+                                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0, 0, 1);" />
+                    <Button text="Search" onAction="#handleSearchAdmins" 
+                            style="-fx-background-color: linear-gradient(to right, #9b59b6, #8e44ad); 
+                                   -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; 
+                                   -fx-padding: 12 30; -fx-font-size: 14; -fx-cursor: hand;
+                                   -fx-effect: dropshadow(gaussian, rgba(155, 89, 182, 0.3), 5, 0, 0, 2);" />
+                </HBox>
+                
+                <!-- Admin Stats -->
+                <HBox spacing="20" style="-fx-background-color: #f8f9fa; -fx-background-radius: 10; 
+                                         -fx-padding: 20; -fx-border-color: #e9ecef; -fx-border-width: 1;">
+                    <VBox spacing="5" alignment="CENTER" HBox.hgrow="ALWAYS">
+                        <Label fx:id="totalAdminsLabel" text="0" 
+                               style="-fx-text-fill: #3498db; -fx-font-weight: bold; -fx-font-size: 32;" />
+                        <Label text="Total Admins" style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" />
+                    </VBox>
+                    <VBox spacing="5" alignment="CENTER" HBox.hgrow="ALWAYS">
+                        <Label fx:id="recentAdminsLabel" text="0" 
+                               style="-fx-text-fill: #2ecc71; -fx-font-weight: bold; -fx-font-size: 32;" />
+                        <Label text="Recent (30 days)" style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" />
+                    </VBox>
+                    <VBox spacing="5" alignment="CENTER" HBox.hgrow="ALWAYS">
+                        <Label fx:id="primaryAdminLabel" text="1" 
+                               style="-fx-text-fill: #e74c3c; -fx-font-weight: bold; -fx-font-size: 32;" />
+                        <Label text="Primary Admin" style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" />
+                    </VBox>
+                </HBox>
+                
+                <!-- Scrollable Admin List -->
+                <ScrollPane fitToWidth="true" 
+                            style="-fx-background-color: transparent; -fx-border-color: transparent; 
+                                   -fx-min-height: 400; -fx-max-height: 600;">
+                    <VBox fx:id="adminListContainer" spacing="12" 
+                          style="-fx-padding: 10; -fx-background-color: transparent;" />
+                </ScrollPane>
+                
+                <!-- No Admins Message -->
+                <Label fx:id="noAdminsLabel" text="No administrators found" 
+                       style="-fx-text-fill: #7f8c8d; -fx-font-style: italic; -fx-font-size: 14; 
+                              -fx-alignment: center; -fx-padding: 40;" 
+                       visible="false" />
+            </VBox>
+        </HBox>
+        
+        <!-- Status Bar -->
+        <HBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; 
+                                 -fx-padding: 15 25; -fx-margin: 0 25 25 25;
+                                 -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+                                 -fx-border-color: #e9ecef; -fx-border-width: 1;">
+            <Label fx:id="statusLabel" text="Ready" 
+                   style="-fx-text-fill: #7f8c8d; -fx-font-size: 14;" HBox.hgrow="ALWAYS" />
+            <Label text="👑 Admin Panel v1.0" 
+                   style="-fx-text-fill: #3498db; -fx-font-weight: bold; -fx-font-size: 14;" />
+        </HBox>
+    </VBox>
+</ScrollPane>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.AdminOrdersController"
+            prefWidth="1000"
+            prefHeight="700"
+            style="-fx-background-color: #f5f7fa;">
+    
+    <top>
+        <VBox spacing="10" style="-fx-padding: 20; -fx-background-color: #2c3e50;">
+            <Label text="📦 Order Management Dashboard" 
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="Administrator Panel - Manage All Customer Orders" 
+                   style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+        </VBox>
+    </top>
+    
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <!-- Filter Controls -->
+            <HBox spacing="15" style="-fx-padding: 10; -fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 5;">
+                <Label text="Filters:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                
+                <ComboBox fx:id="statusFilterCombo" promptText="All Statuses" prefWidth="150"/>
+                
+                <ComboBox fx:id="sortCombo" promptText="Sort By" prefWidth="150"/>
+                
+                <TextField fx:id="searchField" promptText="Search by Order ID or Customer" prefWidth="200"/>
+                
+                <Button text="🔍 Apply Filters" onAction="#handleApplyFilters" 
+                        style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                
+                <Button text="🔄 Refresh All" onAction="#handleRefresh" 
+                        style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+            </HBox>
+            
+            <!-- Statistics Cards -->
+            <HBox spacing="15">
+                <VBox style="-fx-background-color: #3498db; -fx-padding: 15; -fx-background-radius: 8; -fx-min-width: 150;">
+                    <Label text="Total Orders" style="-fx-text-fill: white; -fx-font-size: 12px;"/>
+                    <Label fx:id="totalOrdersLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+                </VBox>
+                
+                <VBox style="-fx-background-color: #2ecc71; -fx-padding: 15; -fx-background-radius: 8; -fx-min-width: 150;">
+                    <Label text="Total Revenue" style="-fx-text-fill: white; -fx-font-size: 12px;"/>
+                    <Label fx:id="totalRevenueLabel" text="ETH 0.00" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+                </VBox>
+                
+                <VBox style="-fx-background-color: #f39c12; -fx-padding: 15; -fx-background-radius: 8; -fx-min-width: 150;">
+                    <Label text="Processing" style="-fx-text-fill: white; -fx-font-size: 12px;"/>
+                    <Label fx:id="processingLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+                </VBox>
+                
+                <VBox style="-fx-background-color: #e74c3c; -fx-padding: 15; -fx-background-radius: 8; -fx-min-width: 150;">
+                    <Label text="Pending" style="-fx-text-fill: white; -fx-font-size: 12px;"/>
+                    <Label fx:id="pendingLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+                </VBox>
+            </HBox>
+            
+            <!-- Orders Container -->
+            <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-padding: 5;">
+                <VBox fx:id="ordersContainer" spacing="10"/>
+            </ScrollPane>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 15; -fx-background-color: #ecf0f1;">
+            <Label fx:id="summaryLabel" text="Showing 0 orders" style="-fx-text-fill: #7f8c8d;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="✕ Close" onAction="#handleClose" 
+                    style="-fx-background-color: #95a5a6; -fx-text-fill: white;"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane>

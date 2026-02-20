@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="controllers.TelebirrController" spacing="15" 
+      style="-fx-padding: 20; -fx-background-color: #f8f9fa;">
+    
+    <Label text="Tele Birr Payment Details" 
+           style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+    
+    <GridPane hgap="10" vgap="10">
+        <Label text="First Name:" GridPane.rowIndex="0" GridPane.columnIndex="0" 
+               style="-fx-font-weight: bold;"/>
+        <TextField fx:id="firstNameField" GridPane.rowIndex="0" GridPane.columnIndex="1" 
+                   promptText="Enter first name"/>
+        
+        <Label text="Last Name:" GridPane.rowIndex="1" GridPane.columnIndex="0" 
+               style="-fx-font-weight: bold;"/>
+        <TextField fx:id="lastNameField" GridPane.rowIndex="1" GridPane.columnIndex="1" 
+                   promptText="Enter last name"/>
+        
+        <Label text="Phone Number:" GridPane.rowIndex="2" GridPane.columnIndex="0" 
+               style="-fx-font-weight: bold;"/>
+        <TextField fx:id="phoneField" GridPane.rowIndex="2" GridPane.columnIndex="1" 
+                   promptText="+251XXXXXXXXX"/>
+    </GridPane>
+    
+    <Label fx:id="errorLabel" style="-fx-text-fill: #e74c3c; -fx-font-weight: bold; 
+           -fx-background-color: #ffeaea; -fx-padding: 10; -fx-border-color: #e74c3c; 
+           -fx-border-radius: 5; -fx-background-radius: 5;" visible="false"/>
+    
+    <Label text="Note: Phone number must start with +251 and be 13 digits total." 
+           style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;"/>
+    
+</VBox>

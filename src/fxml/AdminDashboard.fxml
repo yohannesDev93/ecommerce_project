@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.AdminDashboardController"
+            style="-fx-background-color: #f5f5f5;">
+    
+    <!-- Top Menu Bar -->
+    <top>
+        <VBox spacing="0">
+            <!-- Header -->
+            <HBox style="-fx-background-color: #2c3e50; -fx-padding: 15;" spacing="20" alignment="CENTER_LEFT">
+                <Label text="Admin Dashboard" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <HBox spacing="10" HBox.hgrow="ALWAYS">
+                    <!-- Search -->
+                    <TextField fx:id="searchField" promptText="Search products..." prefWidth="200"/>
+                    <Button text="Search" onAction="#handleSearch"/>
+                    
+                    <!-- Filter by Category -->
+                    <ComboBox fx:id="categoryFilter" promptText="Filter by Category" prefWidth="150"/>
+                    
+                    <!-- Sort Options -->
+                    <ComboBox fx:id="sortComboBox" promptText="Sort by" prefWidth="150"/>
+                </HBox>
+                
+                <Button text="Logout" onAction="#handleLogout"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+            
+            <!-- Action Buttons -->
+            <HBox spacing="10" style="-fx-padding: 10; -fx-background-color: #34495e;">
+                <Button text="Add Category" onAction="#addCategory" 
+                        style="-fx-background-color: #16a085; -fx-text-fill: white;"/>
+                <Button text="Add Product" onAction="#addProduct"
+                        style="-fx-background-color: #2980b9; -fx-text-fill: white;"/>
+                <Button text="View Orders" onAction="#viewOrders"
+                        style="-fx-background-color: #8e44ad; -fx-text-fill: white;"/>
+                <Button text="View Messages" onAction="#viewMessages"
+                        style="-fx-background-color: #f39c12; -fx-text-fill: white;"/>
+                <Button text="View Store" onAction="#viewStore"
+                        style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                <Button text="Statistics" onAction="#viewStatistics"
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+                <Button text="Add Admin" onAction="#addAdmin"
+                        style="-fx-background-color: #d35400; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- Center: Products Table -->
+    <center>
+        <TableView fx:id="productsTable" style="-fx-background-color: white;">
+            <columns>
+                <TableColumn text="ID" fx:id="idColumn" prefWidth="50"/>
+                <TableColumn text="Image" fx:id="imageColumn" prefWidth="100"/>
+                <TableColumn text="Name" fx:id="nameColumn" prefWidth="150"/>
+                <TableColumn text="Price" fx:id="priceColumn" prefWidth="100"/>
+                <TableColumn text="Discount" fx:id="discountColumn" prefWidth="80"/>
+                <TableColumn text="Final Price" fx:id="finalPriceColumn" prefWidth="100"/>
+                <TableColumn text="Category" fx:id="categoryColumn" prefWidth="120"/>
+                <TableColumn text="Stock" fx:id="stockColumn" prefWidth="80"/>
+                <TableColumn text="Description" fx:id="descriptionColumn" prefWidth="200"/>
+            </columns>
+        </TableView>
+    </center>
+    
+    <!-- Bottom: Product Actions -->
+    <bottom>
+        <HBox spacing="15" style="-fx-padding: 15; -fx-background-color: #ecf0f1;" alignment="CENTER">
+            <Button text="Edit Product" onAction="#editProduct" 
+                    style="-fx-background-color: #3498db; -fx-text-fill: white;" prefWidth="120"/>
+            <Button text="Remove Product" onAction="#removeProduct"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white;" prefWidth="120"/>
+            <Button text="Apply Discount" onAction="#applyDiscount"
+                    style="-fx-background-color: #9b59b6; -fx-text-fill: white;" prefWidth="120"/>
+            <Button text="Increase Price" onAction="#increasePrice"
+                    style="-fx-background-color: #f39c12; -fx-text-fill: white;" prefWidth="120"/>
+            <Button text="Update Image" onAction="#updateImage"
+                    style="-fx-background-color: #1abc9c; -fx-text-fill: white;" prefWidth="120"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane>

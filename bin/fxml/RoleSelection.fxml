@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.BlurType?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.FontWeight?>
+
+<StackPane xmlns="http://javafx.com/javafx/17.0.2-ea" 
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="controllers.RoleSelectionController"
+           style="-fx-background-color: #000000;">
+    
+    <!-- Background Image -->
+    <ImageView >
+    <Image url="file:///C:/Full%20Jave%20Projects/ecommerce_project/images/bg/role-selection.jpg" />
+    <!-- The effect must be set as a child property, not a sibling -->
+    <effect>
+        <DropShadow blurType="GAUSSIAN" radius="10" color="#00000080"/>
+    </effect>
+</ImageView>
+    
+    <!-- Overlay for better text visibility -->
+    <StackPane style="-fx-background-color: rgba(0, 0, 0, 0.4);" />
+    
+    <!-- Main Content Container -->
+    <VBox alignment="CENTER" spacing="30" style="-fx-padding: 50;">
+        
+        <!-- Header Section -->
+        <VBox alignment="CENTER" spacing="10">
+            <Label text="E-COMMERCE STORE" style="
+                -fx-font-size: 42px;
+                -fx-font-weight: bold;
+                -fx-text-fill: linear-gradient(to right, #ffffff, #f0f0f0);
+                -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 2);
+                -fx-font-family: 'Segoe UI', Arial, sans-serif;
+            ">
+                <font>
+                    <Font name="System Bold" size="42" />
+                </font>
+            </Label>
+            
+            <Label text="Smart Tech For Smart Living!" style="
+                -fx-font-size: 24px;
+                -fx-text-fill: #e0e0e0;
+                -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0, 0, 1);
+                -fx-font-family: 'Segoe UI', Arial, sans-serif;
+                -fx-font-weight: 300;
+            ">
+                <font>
+                    <Font name="System" size="24" />
+                </font>
+            </Label>
+            
+            <!-- Decorative separator -->
+            <StackPane style="
+                -fx-pref-width: 200px;
+                -fx-pref-height: 2px;
+                -fx-background-color: linear-gradient(to right, transparent, #4cc9f0, transparent);
+                -fx-effect: dropshadow(three-pass-box, #4cc9f0, 10, 0, 0, 0);
+            " />
+        </VBox>
+        
+        <!-- Buttons Container -->
+        <VBox alignment="CENTER" spacing="20" style="
+        	-fx-pref-height: 300px;
+            -fx-background-color: rgba(25, 25, 35, 0.4);
+            -fx-background-radius: 15;
+            -fx-border-radius: 15;
+            -fx-border-color: rgba(255, 255, 255, 0.1);
+            -fx-border-width: 1;
+            -fx-padding: 40;
+            -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 15, 0, 0, 5);
+            -fx-max-width: 600px;
+        ">
+            
+            
+            <!-- Customer Button -->
+            <Button text="Login/Register" style="
+                -fx-pref-width: 280px;
+                -fx-pref-height: 60px;
+                -fx-font-size: 18px;
+                -fx-font-weight: bold;
+                -fx-text-fill: white;
+                -fx-background-color: linear-gradient(to right, #4cc9f0, #4361ee);
+                -fx-background-radius: 10;
+                -fx-border-radius: 10;
+                -fx-cursor: hand;
+                -fx-effect: dropshadow(three-pass-box, rgba(76, 201, 240, 0.5), 10, 0, 0, 3);
+                -fx-font-family: 'Segoe UI', Arial, sans-serif;
+            "
+           
+            onAction="#openCustomerLogin">
+                <padding>
+                    <Insets top="15" right="30" bottom="15" left="30"/>
+                </padding>
+            </Button>
+            
+            <!-- Guest Button -->
+            <Button text="View Store" style="
+                -fx-pref-width: 280px;
+                -fx-pref-height: 60px;
+                -fx-font-size: 18px;
+                -fx-font-weight: bold;
+                -fx-text-fill: white;
+                -fx-background-color: linear-gradient(to right, #f72585, #b5179e);
+                -fx-background-radius: 10;
+                -fx-border-radius: 10;
+                -fx-cursor: hand;
+                -fx-effect: dropshadow(three-pass-box, rgba(247, 37, 133, 0.5), 10, 0, 0, 3);
+                -fx-font-family: 'Segoe UI', Arial, sans-serif;
+            "
+            
+            onAction="#openGuestStore">
+                <padding>
+                    <Insets top="15" right="30" bottom="15" left="30"/>
+                </padding>
+            </Button>
+            
+        </VBox>
+        
+        <!-- Footer Note -->
+        <Label text="© 2023 E-Commerce Store. All rights reserved." style="
+            -fx-font-size: 14px;
+            -fx-text-fill: rgba(255, 255, 255, 0.6);
+            -fx-font-family: 'Segoe UI', Arial, sans-serif;
+            -fx-font-weight: 300;
+        " />
+        
+    </VBox>
+    
+</StackPane>

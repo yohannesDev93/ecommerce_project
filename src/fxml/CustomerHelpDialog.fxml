@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.CustomerHelpController"
+            prefWidth="500"
+            prefHeight="600">
+    
+    <top>
+        <VBox spacing="5" style="-fx-padding: 15; -fx-background-color: #0084ff;">
+            <Label text="💬 Chat with Support" 
+                   style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label fx:id="customerInfoLabel" text="Customer: Loading..." 
+                   style="-fx-font-size: 12px; -fx-text-fill: #e3f2fd;"/>
+        </VBox>
+    </top>
+    
+    <center>
+        <!-- MESSAGE DISPLAY BOX -->
+        <ScrollPane fitToWidth="true" 
+                   style="-fx-background-color: #f5f5f5; -fx-padding: 0;">
+            <VBox fx:id="messagesContainer" spacing="10" 
+                  style="-fx-padding: 15;"/>
+        </ScrollPane>
+    </center>
+    
+    <bottom>
+        <!-- MESSAGE INPUT AND SEND BUTTON -->
+        <VBox spacing="10" style="-fx-padding: 15; -fx-background-color: white;">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <!-- Message Input -->
+                <TextArea fx:id="messageInput" promptText="Type your message here..." 
+                         wrapText="true" prefRowCount="3"
+                         style="-fx-font-size: 14px; -fx-pref-width: 350;"/>
+                
+                <!-- Send Button -->
+                <Button text="Send" onAction="#handleSendMessage" 
+                        style="-fx-background-color: #0084ff; -fx-text-fill: white; 
+                               -fx-font-weight: bold; -fx-padding: 10 20;"/>
+            </HBox>
+            
+            <!-- Status Label -->
+            <Label fx:id="statusLabel" text="" 
+                   style="-fx-text-fill: #666; -fx-font-size: 12px;"/>
+        </VBox>
+    </bottom>
+    
+</BorderPane>

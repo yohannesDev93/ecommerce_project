@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="380.0" prefWidth="235.0" spacing="10" 
+      style="-fx-background-color: white; 
+             -fx-background-radius: 10;
+             -fx-border-color: #e0e0e0; 
+             -fx-border-radius: 10; 
+             -fx-border-width: 1;
+             -fx-padding: 15; 
+             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);"
+      xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+    
+    <!-- Product Image Container with Badge -->
+    <StackPane>
+        <!-- Product Image -->
+        <ImageView fx:id="productImage" fitHeight="140" fitWidth="200" preserveRatio="true" 
+                   style="-fx-background-color: #f8f9fa; 
+                          -fx-background-radius: 8;
+                          -fx-border-color: #ecf0f1;
+                          -fx-border-radius: 8;
+                          -fx-border-width: 1;
+                          -fx-cursor: hand;">
+            <VBox.margin>
+                <Insets bottom="10" />
+            </VBox.margin>
+        </ImageView>
+        
+        <!-- Discount Badge -->
+        <VBox alignment="TOP_RIGHT" spacing="0">
+            <Label fx:id="discountLabel" 
+                   style="-fx-background-color: linear-gradient(to bottom, #e74c3c, #c0392b); 
+                          -fx-text-fill: white; 
+                          -fx-font-weight: 900; 
+                          -fx-font-size: 11px; 
+                          -fx-padding: 3 8; 
+                          -fx-background-radius: 0 0 0 10;
+                          -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);" 
+                   visible="false" />
+        </VBox>
+    </StackPane>
+    
+    <!-- Product Name -->
+    <Label fx:id="productName" maxWidth="200" 
+           style="-fx-font-size: 14px; 
+                  -fx-font-weight: 800; 
+                  -fx-text-fill: #2c3e50;
+                  -fx-font-family: 'Segoe UI', Arial, sans-serif;
+                  -fx-wrap-text: true;" 
+           textAlignment="CENTER" wrapText="true" />
+    
+    <!-- Product Category -->
+    <Label fx:id="productCategory" 
+           style="-fx-font-size: 11px; 
+                  -fx-text-fill: #7f8c8d; 
+                  -fx-font-style: italic;
+                  -fx-font-family: 'Segoe UI', Arial, sans-serif;" />
+    
+    <!-- Price Container -->
+    <HBox alignment="CENTER" spacing="8">
+        <!-- Final Price -->
+        <Label fx:id="finalPrice" 
+               style="-fx-font-size: 18px; 
+                      -fx-font-weight: 900; 
+                      -fx-text-fill: #27ae60;
+                      -fx-font-family: 'Segoe UI', Arial, sans-serif;
+                      -fx-effect: dropshadow(gaussian, rgba(39, 174, 96, 0.2), 1, 0, 0, 0);" />
+        
+        <!-- Original Price (if discounted) -->
+        <Label fx:id="originalPrice" 
+               style="-fx-font-size: 13px; 
+                      -fx-text-fill: #95a5a6; 
+                      -fx-strikethrough: true;
+                      -fx-font-family: 'Segoe UI', Arial, sans-serif;" 
+               visible="false" />
+    </HBox>
+    
+    <!-- Stock Status -->
+    <Label fx:id="stockStatus" 
+           style="-fx-font-size: 11px; 
+                  -fx-font-weight: 700;
+                  -fx-font-family: 'Segoe UI', Arial, sans-serif;" />
+    
+    <!-- Rating Stars (Optional) -->
+    <HBox alignment="CENTER" spacing="2" />
+    
+    <!-- Action Buttons -->
+    <HBox alignment="CENTER" spacing="10">
+        <Button fx:id="detailsButton" prefHeight="32" prefWidth="95" 
+                style="-fx-background-color: linear-gradient(to bottom, #3498db, #2980b9);
+                       -fx-text-fill: white; 
+                       -fx-font-size: 12px; 
+                       -fx-font-weight: 800; 
+                       -fx-background-radius: 6;
+                       -fx-cursor: hand;
+                       -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.3), 3, 0, 0, 1);
+                       -fx-font-family: 'Segoe UI', Arial, sans-serif;
+                       -fx-border-color: #2980b9;
+                       -fx-border-width: 1;" 
+                text="👁️ Details" />
+        
+        <Button fx:id="cartButton" prefHeight="32" prefWidth="95" 
+                style="-fx-background-color: linear-gradient(to bottom, #2ecc71, #27ae60);
+                       -fx-text-fill: white; 
+                       -fx-font-size: 12px; 
+                       -fx-font-weight: 800; 
+                       -fx-background-radius: 6;
+                       -fx-cursor: hand;
+                       -fx-effect: dropshadow(gaussian, rgba(46, 204, 113, 0.3), 3, 0, 0, 1);
+                       -fx-font-family: 'Segoe UI', Arial, sans-serif;
+                       -fx-border-color: #27ae60;
+                       -fx-border-width: 1;" 
+                text="🛒 Add" />
+    </HBox>
+    
+    <!-- Buy Now Button -->
+    <Button fx:id="buyButton" prefHeight="38" prefWidth="200" 
+            style="-fx-background-color: linear-gradient(to right, #f39c12, #e67e22); 
+                   -fx-text-fill: white; 
+                   -fx-font-size: 13px; 
+                   -fx-font-weight: 900; 
+                   -fx-background-radius: 8; 
+                   -fx-effect: dropshadow(gaussian, rgba(243, 156, 18, 0.4), 6, 0, 0, 2);
+                   -fx-cursor: hand;
+                   -fx-font-family: 'Segoe UI', Arial, sans-serif;
+                   -fx-border-color: #e67e22;
+                   -fx-border-width: 1;" 
+            text="🚀 BUY NOW" />
+   
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</VBox>
