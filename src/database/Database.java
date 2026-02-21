@@ -6,9 +6,10 @@ import java.sql.SQLException;
 
 public class Database {
     
-    private static final String URL = "jdbc:mysql://localhost:3306/ecommerce_db";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
+    
+    private static final String URL = "jdbc:mysql://localhost:3306/your_database_name";
+    private static final String USERNAME = "your_username";
+    private static final String PASSWORD = "your_password";
     
     private static Connection connection;
     
